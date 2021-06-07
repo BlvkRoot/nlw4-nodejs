@@ -8,7 +8,11 @@ Henriques Salucamba
 
 # Project Setup
 ```
-npm i
+yarn install
 
-npm --save-dev nodemon
+yarn add typescript -D
+
+yarn tsc --init
+
+yarn add ts-node-dev -D
 ```
