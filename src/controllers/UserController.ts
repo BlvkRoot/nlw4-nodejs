@@ -9,6 +9,11 @@ class UserController {
 
     const userRepository = getRepository(User);
 
+    const userAlreadyExists = userRepository.findOne({ email });
+
+    if(userAlreadyExists)
+      return response.status(400).json({error: "User already exists"});
+
     const user = userRepository.create({
       name,
       email
