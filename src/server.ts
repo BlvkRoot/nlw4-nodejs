@@ -5,8 +5,10 @@ const app = express();
 const PORT = 3333 || process.env.PORT; 
 
 import './database';
+import {router} from './routes';
 
-app.get('/', (req, res) => {
-  res.json({message: "cool"});
-})
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
+app.use(router); 
+  
 app.listen(PORT, () => console.log(`Server running ${PORT}`));
